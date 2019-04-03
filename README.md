@@ -1,5 +1,5 @@
 # nvidia-kali-config
-install nvidia on asus GL552vw
+install nvidia on asus GL552vw with kali linux
 
 this script automatize the inicial configuration of a kali new installation:
     add kali repositories and update the sYstem
