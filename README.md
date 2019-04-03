@@ -2,6 +2,7 @@
 install nvidia on asus GL552vw
 
 this script automatize the inicial configuration of a kali new installation:
+    add kali repositories and update the sYstem
     disables nouveau
     install and configure nvidia drivers
 
