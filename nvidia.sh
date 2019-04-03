@@ -4,7 +4,7 @@
 
 echo  '
     deb http://http.kali.org/kali kali-rolling main non-free contrib
-    deb-src http://http.kali.org/kali kali-rolling main non-free contrib' > etc/apt/sources.list
+    deb-src http://http.kali.org/kali kali-rolling main non-free contrib' >> etc/apt/sources.list
 apt update; apt upgrade
 
 #disable nouveau
@@ -15,9 +15,9 @@ update-initramfs -u
 
 #install linux headers and nvidia-driver
 
-apt install linux-headers-$(uname -r)
-apt install nvidia-driver nvidia-xconfig
-apt autoremove
+apt -y install linux-headers-$(uname -r)
+apt -y install nvidia-driver nvidia-xconfig
+apt -y autoremove
 
 #generate xorg with the nvidia's BusID
 
@@ -51,4 +51,5 @@ EndSection' >> /etc/X11/xorg.conf
 
 #install CUDA drivers
 
-apt install ocl-icd-libopencl1 nvidia-cuda-toolkit
+apt -y install ocl-icd-libopencl1 nvidia-cuda-toolkit
+
