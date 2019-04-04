@@ -49,6 +49,19 @@ Section "Screen"
     Device "intel"
 EndSection' >> /etc/X11/xorg.conf
 
+echo '[Desktop Entry]
+Type=Application
+Name=Optimus
+Exec=sh -c "xrandr --setprovideroutputsource modesetting NVIDIA-0; xrandr --auto"
+NoDisplay=true
+X-GNOME-Autostart-Phase=DisplayServer' > /usr/share/gdm/greeter/autostart/optimus.desktop
+echo '[Desktop Entry]
+Type=Application
+Name=Optimus
+Exec=sh -c "xrandr --setprovideroutputsource modesetting NVIDIA-0; xrandr --auto"
+NoDisplay=true
+X-GNOME-Autostart-Phase=DisplayServer' > /etc/xdg/autostart/optimus.desktop
+
 #install CUDA drivers
 
 apt -y install ocl-icd-libopencl1 nvidia-cuda-toolkit
