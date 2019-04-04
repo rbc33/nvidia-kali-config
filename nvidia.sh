@@ -4,7 +4,7 @@
 
 echo  '
     deb http://http.kali.org/kali kali-rolling main non-free contrib
-    deb-src http://http.kali.org/kali kali-rolling main non-free contrib' >> etc/apt/sources.list
+    deb-src http://http.kali.org/kali kali-rolling main non-free contrib' >> /etc/apt/sources.list
 apt update; apt upgrade
 
 #disable nouveau
