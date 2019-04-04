@@ -30,7 +30,7 @@ EndSection
 Section "Device"
     Identifier "nvidia"
     Driver "nvidia"' > /etc/X11/xorg.conf
-echo '  BusID "'$(nvidia-xconfig --query-gpu-info | grep 'BusID : ' | cut -d ' ' -f6)'"'  >> /etc/X11/xorg.conf
+echo '    BusID "'$(nvidia-xconfig --query-gpu-info | grep 'BusID : ' | cut -d ' ' -f6)'"'  >> /etc/X11/xorg.conf
 echo 'EndSection
 
 Section "Screen"
