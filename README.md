@@ -6,7 +6,7 @@ this script automatize the inicial configuration of a kali new installation:
     disables nouveau
     install and configure nvidia drivers
 
-if you cant log pres ctrl+alt+F2 at logging screen or boot in recovery mode to log from terminal
+you cant loggin normally so pres ctrl+alt+F2 at loggin screen or boot in recovery mode to loggin from terminal
 go to the path of the archive nvidia.sh
 
 to run the script execute froom root user ./nvidia.sh
