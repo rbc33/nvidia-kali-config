@@ -7,9 +7,9 @@ echo  '
     deb-src http://http.kali.org/kali kali-rolling main non-free contrib' >> /etc/apt/sources.list
 apt update; apt upgrade
 
-#disable nouveau
+#disables nouveau
 
-echo -e "blacklist nouveau\noptions nouveau modeset=0\nalias nouveau off" > /etc/modprobe.d/blacklist-nouveau.conf
+echo "blacklist nouveau\noptions nouveau modeset=0\nalias nouveau off" > /etc/modprobe.d/blacklist-nouveau.conf
 
 update-initramfs -u
 
