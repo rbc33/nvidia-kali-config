@@ -3,8 +3,16 @@
 #add kali repositories and upgrade
 
 echo  '
-    deb http://http.kali.org/kali kali-rolling main non-free contrib
-    deb-src http://http.kali.org/kali kali-rolling main non-free contrib' >> /etc/apt/sources.list
+    deb http://deb.debian.org/debian stretch main contrib non-free
+deb-src http://deb.debian.org/debian stretch main contrib non-free
+
+deb http://deb.debian.org/debian-security/ stretch/updates main contrib non-free
+deb-src http://deb.debian.org/debian-security/ stretch/updates main contrib non-free
+
+deb http://deb.debian.org/debian stretch-updates main contrib non-free
+deb-src http://deb.debian.org/debian stretch-updates main contrib non-free
+
+' >> /etc/apt/sources.list
 apt update
 
 #disables nouveau
