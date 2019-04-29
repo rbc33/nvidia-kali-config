@@ -1,10 +1,22 @@
 #!/usr/bin/env bash
 
-#add kali repositories and upgrade
+#detect if its kali or debian, add contrib and non-free repositories and upgrade
 
-echo  '
-    deb http://http.kali.org/kali kali-rolling main non-free contrib
-    deb-src http://http.kali.org/kali kali-rolling main non-free contrib' >> /etc/apt/sources.list
+if [[ "grep 'Kali GNU' $(cat /etc/issue.net)" ]];then
+   echo '
+   deb http://http.kali.org/kali kali-rolling main non-free contrib
+   deb-src http://http.kali.org/kali kali-rolling main non-free contrib' >> /etc/apt/sources.list
+elif [[ "grep 'Debian GNU' $(cat /etc/issue.net)" ]];then
+   echo '
+   deb http://deb.debian.org/debian stretch main contrib non-free
+   deb-src http://deb.debian.org/debian stretch main contrib non-free
+
+   deb http://deb.debian.org/debian-security/ stretch/updates main contrib non-free
+   deb-src http://deb.debian.org/debian-security/ stretch/updates main contrib non-free
+
+   deb http://deb.debian.org/debian stretch-updates main contrib non-free
+   deb-src http://deb.debian.org/debian stretch-updates main contrib non-free' >> /etc/apt/sources.list
+fi
 apt update
 
 #disables nouveau
@@ -65,4 +77,5 @@ X-GNOME-Autostart-Phase=DisplayServer' > /etc/xdg/autostart/optimus.desktop
 #install CUDA drivers
 
 apt -y install ocl-icd-libopencl1 nvidia-cuda-toolkit
+
 
