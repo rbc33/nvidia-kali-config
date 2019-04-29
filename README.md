@@ -1,5 +1,5 @@
 # nvidia-kali-config
-install and config nvidia drivers on asus GL552vw with kali linux
+install and config nvidia drivers on asus GL552vw with Debian, Ubuntu and Kali linux
 
 this script automatize the inicial configuration of a kali new installation:
     add kali repositories and update the system
